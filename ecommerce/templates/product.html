@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+
+<img src="{{cat.image.url}}" class="rounded mx-auto d-block">
+
+<h2 class="text-center mt-3">{{cat.name}}</h2>
+<p class="mt-4 text-center">{{cat.description}}</p>
+
+<div class="container">
+<div class="row">
+    {% for i in product %}
+				<div class="col-lg-4 col-md-4">
+					<div class="single-latest-news">
+						<h4 class="text-center">{{i.name}}</h4>
+						<img class="img-fluid" src={{i.image.url}} height="200px" width="100%">
+						<div class="news-text-box">
+							<a href="{% url 'shop:details' i.id %}" class="btn btn-primary">VIEW PRODUCT</a>
+
+						</div>
+					</div>
+				</div>
+
+{% endfor %}
+</div>
+</div>
+
+
+
+
+{% endblock %}
